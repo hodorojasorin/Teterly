@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Setări — Teterly</title>
+    <style>
+      html,
+      body {
+        width: 360px;
+        height: 540px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="brand">
+        <img src="assets/icon32.png" width="24" height="24" alt="" />
+        <div class="title">
+          <div class="teterly" style="font-family: 'Jersey 25'">Teterly</div>
+        </div>
+        <span class="badge">Setări</span>
+      </div>
+      <div><button id="back" class="ghost">⟵</button></div>
+    </div>
+
+    <div class="section">
+      <h3>Temă & Culori</h3>
+      <div class="row">
+        <input id="red" class="input" type="text" value="#DF163C" />
+        <input id="blue" class="input" type="text" value="#1A293A" />
+        <button id="apply" class="ghost">Aplică</button>
+      </div>
+      <hr class="sep" />
+      <h3>Timer</h3>
+      <div class="row">
+        <input id="pomodoro" class="input" type="number" min="1" value="25" />
+        <input id="short" class="input" type="number" min="1" value="5" />
+        <input id="long" class="input" type="number" min="1" value="15" />
+      </div>
+      <div class="small">Minute pentru Pomodoro, Pauză scurtă, Pauză lungă</div>
+      <hr class="sep" />
+      <h3>Date</h3>
+      <div class="row">
+        <button id="exportData">Export</button>
+        <input type="file" id="importFile" accept="application/json" hidden />
+        <button id="importData" class="ghost">Import</button>
+        <button id="resetAll" class="ghost">Reset</button>
+      </div>
+      <div class="small">
+        Exportă toate datele în JSON. Importă pentru restaurare.
+      </div>
+      <div class="row">
+        <button id="saveSettings">Salvează setările</button
+        ><span class="small" id="saveStatus" style="margin-left: 8px"></span>
+      </div>
+    </div>
+
+    <div class="footer small">
+      <span>v1.1.0</span>
+    </div>
+
+    <script src="settings.js"></script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Teterly</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="brand">
+        <img src="assets/icon32.png" width="24" height="24" alt="" />
+        <div class="title">
+          <span class="ceiti">CEITI</span>
+          <span class="teterly">Teterly</span>
+        </div>
+        <span class="badge">ALPHA</span>
+      </div>
+      <div>
+        <button id="openSettings" class="ghost">⚙️</button>
+      </div>
+    </div>
+
+    <div class="tabbar">
+      <button class="active" data-tab="todo">To-Do</button>
+      <button data-tab="timer">Timer</button>
+      <button data-tab="calendar">Calendar</button>
+      <button data-tab="notes">Notes</button>
+    </div>
+
+    <div id="tab-todo" class="section fade-in">
+      <div class="row">
+        <input id="todoInput" class="input" placeholder="Adaugă o sarcină" />
+        <button id="addTodo">+ Add</button>
+      </div>
+      <div class="todo-list" id="todoList"></div>
+    </div>
+
+    <div id="tab-timer" class="section" hidden>
+      <div class="timer">
+        <div class="pills">
+          <div class="pill" data-preset="pomodoro">Pomodoro</div>
+          <div class="pill" data-preset="short">Pauză scurtă</div>
+          <div class="pill" data-preset="long">Pauză lungă</div>
+        </div>
+        <div class="time" id="timeDisplay">25:00</div>
+        <div class="row">
+          <button id="startTimer">Start</button>
+          <button id="pauseTimer" class="ghost">Pauză</button>
+          <button id="resetTimer" class="ghost">Reset</button>
+        </div>
+        <div class="row">
+          <input
+            id="customMinutes"
+            class="input"
+            type="number"
+            min="1"
+            max="180"
+            placeholder="Minute"
+          />
+          <button id="setCustom" class="ghost">Set</button>
+        </div>
+        <div class="small">Notificări la finalul sesiunii</div>
+      </div>
+    </div>
+
+    <div id="tab-calendar" class="section" hidden>
+      <div class="calendar">
+        <div class="row">
+          <input type="date" id="calDate" class="input" />
+          <input type="time" id="calTime" class="input" />
+        </div>
+        <div class="row">
+          <input id="calText" class="input" placeholder="Activitate" />
+          <button id="addEvent">+ Add</button>
+        </div>
+        <hr class="sep" />
+        <div class="events" id="events"></div>
+      </div>
+    </div>
+
+    <div id="tab-notes" class="section" hidden>
+      <div class="notes">
+        <textarea
+          id="notesArea"
+          class="input"
+          placeholder="Note rapide"
+        ></textarea>
+        <div class="row">
+          <button id="copyNotes" class="ghost">Copy</button>
+          <button id="clearNotes" class="ghost">Clear</button>
+          <span class="small" id="savedAt"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer small">
+      <span>© Teterly — Centrul de Excelență</span>
+      <span class="kbd">Alt+T</span>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
